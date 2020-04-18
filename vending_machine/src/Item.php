@@ -1,4 +1,6 @@
 <?php
+namespace VendingMachine;
+
 class Item
 {
   private $name;

@@ -12,5 +12,5 @@ code below runs tests
 docker run --rm --interactive --tty \
 --volume $PWD:/app \
 -w /app \
-php ./vendor/bin/phpunit --bootstrap  vendor/autoload.php tests/ItemHolderTest.php
+php ./vendor/bin/phpunit --bootstrap  vendor/autoload.php tests/file.php
 ```

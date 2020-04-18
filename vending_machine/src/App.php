@@ -1,5 +1,7 @@
 <?php
-class VendingMachine
+namespace VendingMachine;
+
+class App
 {
   private $item_holder;
 

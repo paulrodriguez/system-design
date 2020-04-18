@@ -5,6 +5,8 @@
         "phpunit/phpunit": "^9.0"
     },
     "autoload": {
-      "classmap" : {"models/ItemHolder.php"}
+      "psr-4": {
+        "VendingMachine\\": "src/"
+      }
     }
 }

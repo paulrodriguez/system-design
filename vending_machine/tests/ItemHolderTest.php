@@ -1,12 +1,11 @@
 <?php
 namespace Test;
-include dirname(__DIR__).'/models/ItemHolder.php';
-include dirname(__DIR__).'/models/Item.php';
+#include dirname(__DIR__).'/models/ItemHolder.php';
+#include dirname(__DIR__).'/models/Item.php';
+
 use PHPUnit\Framework\TestCase;
-use ItemHolderFactory;
-#use ItemHolder;
-#use Item;
-use ItemFactory;
+use VendingMachine\ItemHolderFactory as ItemHolderFactory;
+use VendingMachine\ItemFactory as ItemFactory;
 
 class ItemHolderTest extends TestCase
 {
@@ -42,7 +41,6 @@ class ItemHolderTest extends TestCase
 
   public function testgetItem()
   {
-    $this->expectException(\Exception::class);
 
     $itemHolder = ItemHolderFactory::create(1,2.99);
 

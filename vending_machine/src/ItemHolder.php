@@ -1,4 +1,6 @@
 <?php
+namespace VendingMachine;
+
 /**
  * the item holder repesents a place in the vending machine matrix
  * that holds different items
@@ -82,8 +84,9 @@ class ItemHolder
     if(count($this->items) == 0) {
       throw new \Exception('no items left');
     }
+    $item = end($this->items);
 
-    return $this->items[-1];
+    return $item;
   }
 
   public function popItem() : Item
