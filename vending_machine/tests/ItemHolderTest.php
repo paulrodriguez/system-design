@@ -21,7 +21,7 @@ class ItemHolderTest extends TestCase
   public function testAddItem()
   {
     $itemHolder = ItemHolderFactory::create(1,2);
-    $item = ItemFactory::create("Fritos", 5.99);
+    $item = ItemFactory::create("Fritos", 5.50);
 
     $itemHolder->addItem($item);
 
@@ -32,7 +32,7 @@ class ItemHolderTest extends TestCase
   {
     $this->expectException(\Exception::class);
 
-    $itemHolder = ItemHolderFactory::create(1,2.99);
+    $itemHolder = ItemHolderFactory::create(1,2.00);
 
     $itemHolder->addItem(ItemFactory::create('Doritos',5.99));
     $itemHolder->addItem(ItemFactory::create('Lays',4.99));
@@ -42,13 +42,13 @@ class ItemHolderTest extends TestCase
   public function testgetItem()
   {
 
-    $itemHolder = ItemHolderFactory::create(1,2.99);
+    $itemHolder = ItemHolderFactory::create(1,2.00);
 
-    $itemHolder->addItem(ItemFactory::create('Doritos',5.99));
+    $itemHolder->addItem(ItemFactory::create('Doritos',5.00));
 
     $item = $itemHolder->getItem();
     $this->assertEquals('Doritos', $item->getName());
-    $this->assertEquals(5.99, $item->getPrice());
+    $this->assertEquals(5.00, $item->getPrice());
 
   }
 

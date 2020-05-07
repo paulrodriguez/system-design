@@ -1,14 +1,19 @@
 <?php
 namespace VendingMachine\Api;
 
-interface IMoneyHolder {
+/**
+ * interface for IMoneyHolder
+ * specifies methods to be implemented for classes that hold money
+ */
+interface IMoneyHolder
+{
   /**
    * add Money object to list
    *
-   * @param \VendingMachine\Money
+   * @param \VendingMachine\Api\IMoney
    * @return \VendingMachine\IMoneyHolder
    */
-  public function addMoney(\VendingMachine\Money $money);
+  public function addMoney(IMoney $money);
 
   /**
    * get total amount of money
@@ -20,31 +25,39 @@ interface IMoneyHolder {
   /**
    * get money list
    *
-   * @return \VendingMachine\Money[]
+   * @return \VendingMachine\Api\IMoney[]
    */
   public function getMoney();
 
   /**
-   * get money based on their type
+   * get money based on name
    *
    * @param string $type
-   * @return \VendingMachine\Money[]
+   * @return []
    */
-  public function getMoneyByType($type);
+  public function getMoneyByName($name);
 
   /**
    * checks whether the money can be added to list
    *
-   * @param \VendingMachine\Money $money
+   * @param VendingMachine\Api\IMoney $money
    * @return boolean
    */
-  public function canAddMoney(\VendingMachine\Money $money);
+  public function canAddMoney(IMoney $money) : bool;
 
   /**
-   * add money type that is allowed to be added
+   * add money type that is allowed to be added to this holder
    *
    * @param \VendingMachine\Money $money
    * @return void
    */
-  public function setAllowedMoney(\VendingMachine\Money $money);
+  public function addAllowedMoneyIn(IMoney $money);
+
+  /**
+   * add money type that is allowed to be extracted from this holder
+   *
+   * @param \VendingMachine\Money $money
+   * @return void
+   */
+  public function addAllowedMoneyOut(IMoney $money);
 }

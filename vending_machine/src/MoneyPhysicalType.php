@@ -1,7 +1,7 @@
 <?php
 namespace VendingMachine;
 
-class MoneyType
+class MoneyPhysicalType
 {
   const BILL = 'bill';
   const COIN = 'coin';

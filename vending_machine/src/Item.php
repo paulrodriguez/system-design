@@ -21,13 +21,3 @@ class Item
     return $this->price;
   }
 }
-
-class ItemFactory
-{
-  public static function create(string $name, float $price): Item
-  {
-    $item = new Item($name, $price);
-
-    return $item;
-  }
-}

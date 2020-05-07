@@ -103,7 +103,7 @@ class ItemHolder
 
 }
 
-class ItemHolderFactory
+/*class ItemHolderFactory
 {
   public static function create(int $capacity, float $price) : ItemHolder
   {
@@ -111,4 +111,4 @@ class ItemHolderFactory
 
     return $itemHolder;
   }
-}
+}*/
